@@ -41,3 +41,6 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+test {
+    systemProperty 'java.awt.headless', 'true'
+}

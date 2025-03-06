@@ -1,4 +1,5 @@
 ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/gradle.yml/badge.svg)
+![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/pmd-analysis.yml/badge.svg)
 
 # ClockSystem
 

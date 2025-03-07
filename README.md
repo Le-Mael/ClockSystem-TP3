@@ -1,6 +1,7 @@
 Test code: ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/gradle.yml/badge.svg)
 
 pmd-analysis: ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/pmd-analysis.yml/badge.svg)
+
 Code security: ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/codeql.yml/badge.svg)
 
 # ClockSystem

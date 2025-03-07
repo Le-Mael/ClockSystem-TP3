@@ -16,7 +16,7 @@ jobs:
         java-version: '21'
 
     - name: Run PMD
-      uses: sfdx-actions/pmd@v0.3.0
+      uses: sfdx-actions/pmd@v1
       with:
         src: './src'
         ruleset: './rulesets/java/quickstart.xml'

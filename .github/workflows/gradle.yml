@@ -1,28 +1,29 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
-
 name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
-    
+    branches: ["main"]
+
+env:
+  DISPLAY: ":99.0" # Set a display for Xvfb
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
+    services:
+      xvfb:
+        image: selenium/standalone-chrome:latest
+        options: -e VNC_SERVER=true -e VNC_PORT=5900
+        
     steps:
     - uses: actions/checkout@v4
+    - name: Start Xvfb
+      run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
@@ -35,16 +36,6 @@ jobs:
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
       with:
         gradle-version: '8.10'
-    - name: Build with Gradle 8.10
+
+    - name: Build with Gradle Run
       run: gradle build
-
-
-      
-
-    # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
-    # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
-
-
-
-      
-

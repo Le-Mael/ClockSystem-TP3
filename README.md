@@ -4,6 +4,9 @@ pmd-analysis: ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions
 
 Code security: ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/codeql.yml/badge.svg)
 
+Repository Security Analysis: ![Build Status](https://github.com/Le-Mael/ClockSystem-TP3/actions/workflows/scorecard.yml/badge.svg)
+
+
 # ClockSystem
 
 This is a gradle-based Java project for a Clock with Swing GUI and JUnit5 unit tests. It has been created and used by Tom Mens for educational purposes at the University of Mons.
